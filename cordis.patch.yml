@@ -1,0 +1,8 @@
+# Minimal patch: attach dsh-context-window to a profile with default settings.
+# Install: dsh plugin --profile <name> add <source>
+#   <source> = ./dsh-context-window | ./dsh-context-window-0.1.0.tgz | github:you/dsh-context-window
+- name: dsh-context-window
+  config:
+    threshold: 0.80
+    maxPinnedFiles: 5
+    windowTokens: 65536
