@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "jest --config jest.config.js --runInBand"
+    "test": "jest --config jest.config.js --runInBand",
+    "demo": "node demo.js"
   },
   "keywords": [
     "dsh",

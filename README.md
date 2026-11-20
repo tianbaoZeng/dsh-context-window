@@ -69,7 +69,8 @@ dsh plugin --profile <name> add dsh-context-window
 
 ```bash
 npm run build   # tsc，产物在 dist/
-npm test        # jest，45 个用例（含 fake Cordis 宿主装配测试）
+npm test        # jest，46 个用例（含 fake Cordis 宿主装配测试）
+npm run demo    # 本地冒烟演示：fake 宿主模拟会话，打印仪表条/摘要/pin/快照效果
 ```
 
 ### 与 DSH 版本的适配

@@ -30,10 +30,11 @@ export class Summarizer {
 
   /**
    * Extractive fallback used when no LLM callback is wired: keeps the first
-   * message and the newest exchange, digests the middle.
+   * message and the newest exchange, digests the middle. Always returns a new
+   * array — callers may mutate their copy of the history.
    */
   extractive(messages: ChatMessage[]): ChatMessage[] {
-    if (messages.length <= 6) return messages;
+    if (messages.length <= 6) return [...messages];
     const middle = messages.slice(1, -3);
     const digest = middle
       .map((m) => {

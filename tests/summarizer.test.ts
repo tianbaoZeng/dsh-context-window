@@ -53,6 +53,14 @@ describe('Summarizer', () => {
     expect(s.extractive(original)).toEqual(original);
   });
 
+  test('extractive returns a copy, never the input array', () => {
+    const s = new Summarizer({ threshold: 0.8, auto: true });
+    const original = messages(3);
+    const result = s.extractive(original);
+    expect(result).toEqual(original);
+    expect(result).not.toBe(original);
+  });
+
   test('run uses the LLM callback and never summarises the newest exchange', async () => {
     const s = new Summarizer({ threshold: 0.8, auto: true }, async () => 'llm summary text');
     const compacted = await s.run(messages(8));
